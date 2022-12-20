@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<main class="layout layout--3">
+  <div class="container">
+      <h2> Home Page</h2>
+      {% if not request.user.is_authenticated %}
+      <h2> Please login to see user lists or use Api/users</h2>
+      {% endif %}
+  </div>
+</main>
+{% if request.user.is_authenticated %}
+<h2> <a href="{% url 'userlist'%}"> check all patients records</a> </h2>
+<h2> <a href="{% url 'patientlist'%}"> check all patient_ids</a> </h2>
+<h2> <a href="{% url 'delete'%}"> delete a patient record</a> </h2>
+<h2> <a href="{% url 'update_patient'%}"> update a patient record</a> </h2>
+<h2> <a href="{% url 'create'%}"> add a patient record</a> </h2>
+{% endif %}
+{% endblock content %}

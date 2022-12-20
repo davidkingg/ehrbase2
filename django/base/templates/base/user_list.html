@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<main class="layout layout--3">
+  <div class="container">
+    {% for user in users %}
+      <h2> <a href="{% url 'profile' user.id%}"> {{user.username}}</a> </h2>
+    {% endfor %}
+  </div>
+</main>
+
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends 'main.html'%}
+{% block content%}
+<div>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label>Enter Patient Name:</label>
+        <input type='text' name='name' placeholder="First"></input> <br>
+
+        <label>Enter Patient Family Name:</label>
+        <input type='text' name='family_name' placeholder="Family Name"></input> <br>
+        
+        <label>Enter Home Phone:</label>
+        <input type='text' name='phone' placeholder="phone number"></input> <br>
+
+        <label for="gender">Choose a Gender:</label>
+        <select name="gender" id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+          <option value="unknown">Unknown</option>
+        </select> <br>
+
+        <label for="active">Active:</label>
+        <select name="state" id="state">
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select> <br>
+
+        <input type='submit' value='Create'></input><br>
+
+    </form>
+</div>
+
+{% endblock content%}
